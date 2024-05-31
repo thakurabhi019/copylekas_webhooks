@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/copyleaks/export/:export_id/completed", (req, res) => {
+router.post("/copyleaks/export/:export_id/:status", (req, res) => {
   console.log("export completed webhook called");
-  const { export_id, result_id } = req.params;
-  console.log({ export_id, result_id });
+  const { export_id, status } = req.params;
+  console.log({ export_id, status });
   const body = req.body;
   console.log(JSON.stringify(body));
   res.send(
-    `Webhook called for export_id: ${export_id} and result_id: ${result_id}`
+    `Webhook called for export_id: ${export_id} and status: ${status}`
   );
 });
 
