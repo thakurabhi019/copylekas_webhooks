@@ -18,8 +18,9 @@ router.post("/copyleaks/export/:export_id/crawled-version", (req, res) => {
   // console.log({ export_id, status });
   const body = req.body;
   console.log(JSON.stringify(body));
+  console.log(body,"body");
   res.send(
-    `Webhook crawled version called for export_id: ${export_id}`
+    `Webhook crawled version called for export_id`
   );
 });
 
