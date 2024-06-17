@@ -11,6 +11,18 @@ router.post("/copyleaks/export/:export_id/pdf-report", (req, res) => {
     );
   });
 
+// crawled version
+router.post("/copyleaks/export/:export_id/crawled-version", (req, res) => {
+  console.log("export crawled version completed webhook called");
+  // const { export_id, status } = req.params;
+  // console.log({ export_id, status });
+  const body = req.body;
+  console.log(JSON.stringify(body));
+  res.send(
+    `Webhook crawled version called for export_id: ${export_id}`
+  );
+});
+
 router.post("/copyleaks/export/:export_id/:status", (req, res) => {
   console.log("export completed webhook called");
   const { export_id, status } = req.params;
