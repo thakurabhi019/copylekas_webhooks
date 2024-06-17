@@ -1,15 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// pdf report
-// "endpoint": "https://copylekas-webhooks.onrender.com/copyleaks/export/sitaram1234567/pdf-report"
-router.post("/copyleaks/export/:export_id/pdf-report", (req, res) => {
-    console.log("result pdf webhook called==============================");
-    console.log(req.headers);
-    res.send(
-      `Webhook called for export_id pdf`
-    );
-  });
 
 // crawled version
 router.post("/copyleaks/export/:export_id/crawled-version", (req, res) => {
@@ -23,6 +14,18 @@ router.post("/copyleaks/export/:export_id/crawled-version", (req, res) => {
     `Webhook crawled version called for export_id`
   );
 });
+
+// pdf report
+// "endpoint": "https://copylekas-webhooks.onrender.com/copyleaks/export/sitaram1234567/pdf-report"
+router.post("/copyleaks/export/:export_id/pdf-report", (req, res) => {
+    console.log("result pdf webhook called==============================");
+    console.log(req.headers);
+    res.send(
+      `Webhook called for export_id pdf`
+    );
+  });
+
+
 
 router.post("/copyleaks/export/:export_id/:status", (req, res) => {
   console.log("export completed webhook called");
